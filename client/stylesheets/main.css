@@ -1,0 +1,19 @@
+html, body, .container-fluid, .row-fluid {
+  height: 100%;
+}
+
+label {
+  font-size: 2em;
+}
+
+.container-fluid{
+  display:table;
+ }
+
+.row-fluid {
+  display:table-cell; 
+  vertical-align: middle;
+  padding-bottom: 20%;
+}
+
+

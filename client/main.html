@@ -1,0 +1,45 @@
+<head>
+  <title>Meteor Pong</title>
+  <script type="text/javascript" src="crafty-min.js"></script>
+</head>
+
+<body>
+  {{> startView}}
+  {{> gameView}}
+  {{> scoresView}}
+</body>
+
+<template name="startView">
+  {{#if isVisible}}
+    <div class="container-fluid text-center">      
+        <div class="row-fluid">
+            <div class="form-group" style="float:none; margin:0 auto;">
+                <label for="code">Votre Pseudo</label>
+                <input id="name" type="text" class="form-control input-lg">
+            </div>
+        </div>  
+    </div>
+  {{/if}}
+</template>
+
+<template name="gameView">
+  {{#if isVisible}} 
+    <div id="gameScene"></div>
+  {{/if}} 
+</template> 
+
+<template name="scoresView">
+  {{#if isVisible}}     
+    <div class="container-fluid text-center">      
+        <div class="row-fluid">
+            <h1>Wall of Fame</h1> 
+            {{#each scores}}
+              <div>
+                   <strong>{{player.name}}</strong> : {{score}}
+              </div>
+            {{/each}}
+        </div>  
+    </div>
+  {{/if}}
+</template>   
+
