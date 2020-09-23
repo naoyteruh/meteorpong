@@ -1,11 +1,15 @@
 {
-  "name": "my_cool_app",
+  "name": "meteorpong",
   "private": true,
   "scripts": {
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
-    "visualize": "meteor --production --extra-packages bundle-visualizer"
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "cleanup": "if exist \"../bundle/\" (rd /s /q \"../bundle/\")",
+    "dist": "npm run cleanup && meteor build ../ --directory --architecture os.linux.x86_64 --server-only",
+    "predeploy": "npm run dist && xcopy \"app.yaml\" \"../bundle\" && xcopy \"Dockerfile\" \"../bundle\"",
+    "deploy": "npm run predeploy && (cd ../bundle && gcloud app deploy -q)"
   },
   "dependencies": {
     "@babel/runtime": "^7.10.4",

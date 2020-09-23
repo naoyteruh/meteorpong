@@ -1,0 +1,19 @@
+entrypoint: meteor run
+env: flex
+runtime: custom
+threadsafe: true
+automatic_scaling:
+  max_num_instances: 1
+# network:
+#   session_affinity: true
+env_variables:
+  ROOT_URL: https://meteorpong.ew.r.appspot.com
+  MONGO_URL: mongodb+srv://meteorpong:meteorpongpwd@cluster0.jpcgr.gcp.mongodb.net/meteorpong?retryWrites=true&w=majority
+  DISABLE_WEBSOCKETS: "1"
+# skip_files:
+# - ^(.*/)?\.dockerignore$
+# - ^(.*/)?\npm-debug.log$
+# - ^(.*/)?\yarn-error.log$
+# - ^(.*/)?\.git$
+# - ^(.*/)?\.hg$
+# - ^(.*/)?\.svn$
