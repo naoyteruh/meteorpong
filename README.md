@@ -40,6 +40,6 @@ Changez vers le projet créé précedemment `gcloud config set project <PROJECT_
 
 Dans le fichier app.yaml :
 - Mettez à jour METEOR_URL avec l'url fournie par Mongo Atlas
-- Mettez à jour ROOT_URL avec le nom du projet fournie par Mongo Atlas
+- Mettez à jour ROOT_URL avec l'url racine ou GCP deploit votre application
 
 Lancez la commande `npm run deploy`
