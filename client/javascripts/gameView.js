@@ -120,14 +120,14 @@ Tracker.autorun(function() {
               // MAJ du score
               incrementScorePanel();              
               // Test 1 : MAJ de la destination cote client suite a l impact
-              // import '/shared/pong';
-              // opponentDestination = get_destination(this.x, this.y, xBallSpeed, yBallSpeed, width, height);    
+              import '/shared/pong';
+              opponentDestination = get_destination(this.x, this.y, xBallSpeed, yBallSpeed, width, height);    
               // Test 2 : MAJ de la destination cote serveur suite a l impact 
-              Meteor.call('get_destination', this.x, this.y, xBallSpeed, yBallSpeed, width, height, 
-                function(error, result) {
-                  opponentDestination = result;
-                }
-              );             
+              // Meteor.call('get_destination', this.x, this.y, xBallSpeed, yBallSpeed, width, height, 
+              //   function(error, result) {
+              //     opponentDestination = result;
+              //   }
+              // );             
             } else {                        
               // MAJ de la vitesse verticale
               yBallSpeed += ((this.y - (height / 10)) - (opponent.y - 15)) * 5;
