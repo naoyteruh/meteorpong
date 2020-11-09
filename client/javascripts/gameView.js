@@ -80,15 +80,16 @@ Tracker.autorun(function() {
           .color("red")
           .bind("EnterFrame", function(eventData) {                           
             // Test 1 : MAJ position cote client
-            //this.y += get_move_step(opponentDestination, this.y, height);             
+            import '/shared/pong';
+            this.y += get_move_step(opponentDestination, this.y, height);             
             // Test 2 : MAJ position cote serveur
-            if(xBallSpeed > 0) {
-              Meteor.call('get_move_step', opponentDestination, this.y, height, 
-                function(error, result) {
-                  opponent.y += result;
-                }
-              );
-            }
+            // if(xBallSpeed > 0) {
+            //   Meteor.call('get_move_step', opponentDestination, this.y, height, 
+            //     function(error, result) {
+            //       opponent.y += result;
+            //     }
+            //   );
+            // }
           });
           
       var ball = Crafty.e("2D, Canvas, Color, Collision")
